@@ -7,3 +7,6 @@
 # 搞不明白的原型
 #http://www.cnblogs.com/wangfupeng1988/p/3977924.html
 
+#oop
+#https://javascript.ruanyifeng.com/oop/basic.html
+
