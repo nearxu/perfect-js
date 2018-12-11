@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .head_wrap_shrink {
+            background: #0052d9;
+            height: 70px;
+            top: -10px;
+        }
+
+        .head_wrap {
+            background: 0 0;
+            background: #0052d9;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            z-index: 9999;
+            transition: all 0.4s;
+        }
+
+        .head_wrap .head_wrap_expand {
+            height: 80px;
+            top: 0
+        }
+
+        .head_con {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap head_wrap_index">
+        <div class="head_wrap head_wrap_expand head_wrap_shrink">
+            <div class="head_bgcolor"></div>
+            <div class="head">
+                <div class="head_con">
+                    <a href="#"></a>
+                </div>
+                <div class="menu_list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
