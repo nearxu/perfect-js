@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .body {
+            width: 100%;
+            height: 2000px;
+            background: #e5e5e5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+
+    </div>
+    <script>
+        window.addEventListener('scroll', debounce(foo1(foo2), 500))
+        // 防抖动
+        function debounce(fn, delay) {
+            var timer = null;
+            return function () {
+                var context = this;
+                var args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    fn.apply(context, args);
+                }, delay);
+            }
+        }
+        function foo1(callback) {
+            setTimeout(function () {
+                console.log('1');
+                callback();
+            }, 500)
+        }
+        function foo2() {
+            console.log('2');
+        }
+    </script>
+</body>
+
+</html>

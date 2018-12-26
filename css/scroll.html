@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .box {
+            height: 100px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 0 auto 50px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .backTop {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            z-index: 10;
+        }
+
+        .active {
+            font-size: 30px;
+        }
+
+        .box1:nth-child(1) {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: orange;
+        }
+
+        .box3 {
+            background-color: yellow;
+        }
+
+        .box4 {
+            background-color: green;
+        }
+
+        .box5 {
+            background-color: blue;
+        }
+
+        .box6 {
+            background-color: indigo;
+        }
+
+        .box7 {
+            background-color: purple;
+
+        }
+
+        .box8 {
+            background-color: cyan;
+        }
+
+        .box9 {
+            background-color: magenta;
+        }
+
+        .box10 {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button class="btn btn-primary box1" name=".box1">点我定位到位置1</button>
+        <button class="btn btn-primary box2" name=".box2">点我定位到位置2</button>
+        <button class="btn btn-primary box3" name=".box3">点我定位到位置3</button>
+        <button class="btn btn-primary box4" name=".box4">点我定位到位置4</button>
+        <button class="btn btn-primary box5" name=".box5">点我定位到位置5</button>
+        <button class="btn btn-primary box6" name=".box6">点我定位到位置6</button>
+        <button class="btn btn-primary box7" name=".box7">点我定位到位置7</button>
+        <button class="btn btn-primary box8" name=".box8">点我定位到位置8</button>
+        <button class="btn btn-primary box9" name=".box9">点我定位到位置9</button>
+        <button class="btn btn-primary box10" name=".box10">点我定位到位置10</button>
+    </div>
+    <div class="backTop" style="display:none">回到顶部</div>
+    <div class="container">
+        <div class="box box1" name="box1">1</div>
+        <div class="box box2" name="box2">2</div>
+        <div class="box box3" name="box3">3</div>
+        <div class="box box4" name="box4">4</div>
+        <div class="box box5" name="box5">5</div>
+        <div class="box box6" name="box6">6</div>
+        <div class="box box7" name="box7">7</div>
+        <div class="box box8" name="box8">8</div>
+        <div class="box box9" name="box9">9</div>
+        <div class="box box10" name="box10">10</div>
+    </div>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $('button').click(function () {
+            var name = $(this).attr('name');
+            var offset = $(name).offset();
+            $('body,html').animate({
+                scrollTop: offset.top
+            })
+        })
+        function debounce(func, delay) {
+            var timer = null;
+            return function () {
+                var context = this;
+                var args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    func.apply(context, args);
+                }, delay)
+            }
+        }
+        function foo() {
+            console.log(window.scrollY)
+            var height = $(window).height();
+            if ($(window).scrollTop() > height) {
+                $('.backTop').fadeIn(500);
+            } else {
+                $('.backTop').fadeOut(500);
+            }
+            var scrollPosition = $(window).scrollTop()
+            $('.box').each(function () {
+                if (this.offsetTop - $(window).scrollTop() <= this.offsetHeight && this.offsetTop - $(window).scrollTop() > 0) {
+                    var index = $(this).attr('name');
+                    $('header>.' + this.index).addClass('active');
+                }
+            })
+        }
+
+        window.addEventListener('scroll', debounce(foo, 500));
+        $('.backTop').click(function () {
+            $('body,html').animate({ scrollTop: 0 }, 100)
+        })
+    </script>
+</body>
+
+</html>
