@@ -10,5 +10,6 @@ function  cur(a) {
     }
 }
 
+var a = b => c => console.log(b+c);
 console.log(cur(2)(3));
 
