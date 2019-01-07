@@ -1,0 +1,1 @@
+// 所有在JSX声明的事件都会被委托在顶层document节点上，并根据事件名和组件名存储回调函数(listenerBank)。每次当某个组件触发事件时，在document节点上绑定的监听函数（dispatchEvent）就会找到这个组件和它的所有父组件(ancestors)，对每个组件创建对应React合成事件(SyntheticEvent)并批处理(runEventQueueInBatch(events))，从而根据事件名和组件名调用(invokeGuardedCallback)回调函数。
