@@ -60,3 +60,7 @@ console.log(uniqe(a));
 console.log(uniqe1(a));
 console.log(uniqeArr(a));
 console.log(uniqeBest(a));
+
+const count = (arr, val) => arr.reduce((ret, item) => item === val ? ++ret : ret, 0)
+
+console.log(count(a, 3));
