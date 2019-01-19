@@ -19,3 +19,8 @@
 #oop
 #https://javascript.ruanyifeng.com/oop/basic.html
 
+
+
+# 最近想学习函数式编程
+# https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch5.html#%E5%87%BD%E6%95%B0%E9%A5%B2%E5%85%BB
+
