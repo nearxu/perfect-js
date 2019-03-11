@@ -1,0 +1,11 @@
+i{
+  display: inline-block;
+  border:none;
+  border-left:2px solid #e5e5e5;
+  border-top:2px solid #e5e5e5;
+  width:10px;
+  height:10px;
+  background: transparent;
+  padding:0;
+  transform: rotate(-45deg); 
+}
