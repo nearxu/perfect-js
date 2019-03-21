@@ -18,3 +18,7 @@
 // Object.prototype.toString.call(null || function || RegExp || Date)
 
 // instanceof 已知是对象 [] date regexp function instanceof 
+
+const isType = (type, obj) => {
+  return Object.prototype.toString.call(obj) === `[object ${type}]`
+}
