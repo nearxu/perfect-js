@@ -1,3 +1,12 @@
+// 
+
+function Person(){}
+
+var list = new Person();
+
+list.__proto__ === Person.prototype ===Object.prototype  === null
+// 整个原型链式调用
+
 
 function Person() { }
 Person.prototype.say = ' i can say!';
